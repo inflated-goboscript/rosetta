@@ -1,6 +1,7 @@
 # inflator.toml syntax documentation: https://github.com/inflated-goboscript/inflator#inflator
 name = "test"
 version = "v0.0.0"
-username = "if this is left blank then -9999 aura 💀"
+username = "inflated-goboscript"
 
 [dependencies]
+rosetta = ".."

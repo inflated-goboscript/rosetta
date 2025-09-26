@@ -1,0 +1,3 @@
+onflag {
+    log "###### Included rosetta";
+}
