@@ -1,3 +1,1 @@
-onflag {
-    log "###### Included rosetta";
-}
+%include inflator/rosetta/lempel_ziv_complexity
