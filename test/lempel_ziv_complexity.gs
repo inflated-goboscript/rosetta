@@ -38,10 +38,10 @@ proc main {
     repeat length tests {
         local test = tests[i];
 
-        cache_lempel_ziv_complexity test;
+        local complexity = get_lempel_ziv_complexity(test);
 
-        log ifelse(test, length test != 0, "<empty>") & " -> complexity = " & length lempel_ziv_complexity;
-        log "substrings are: " & ifelse(lempel_ziv_complexity, length lempel_ziv_complexity != 0, "None");
+        log ifelse(test, length test != 0, "<empty>") & " -> complexity = " & complexity;
+        log "substrings are: " & ifelse(lempel_ziv_complexity, complexity != 0, "None");
         i++;
     }
 }

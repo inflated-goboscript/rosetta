@@ -6,8 +6,8 @@ list lempel_ziv_complexity;
 
 # Computes the Lempel-Ziv complexity of a given string sequence.
 # List of distinct substrings used in the parsing process accessible as the `lempel_ziv_complexity` list.
-proc cache_lempel_ziv_complexity seq {
-    # note: using a proc instead of a func, because goboscript funcs cannot return lists.
+func get_lempel_ziv_complexity(seq) {
+    # note: returning length list and not list itself, because goboscript funcs cannot return lists.
 
     delete lempel_ziv_complexity; # Initialise an empty list to store unique substrings
     local n = length $seq; # Length of the input sequence
@@ -37,4 +37,6 @@ proc cache_lempel_ziv_complexity seq {
         add phrase to lempel_ziv_complexity;
         i += length phrase;
     }
+
+    return length lempel_ziv_complexity;
 }
