@@ -23,6 +23,15 @@ list tests = [
     "HELLO WORLD! HELLO WORLD! HELLO WORLD! HELLO WORLD!",
 ];
 
+func ifelse(tval, cond, fval) {
+    if $cond {
+        return $tval;
+    } else {
+        return $fval;
+    }
+}
+
+
 onflag {main;}
 proc main {
     local i = 1;
@@ -30,6 +39,9 @@ proc main {
         local test = tests[i];
 
         cache_lempel_ziv_complexity test;
+
+        log ifelse(test, length test != 0, "<empty>") & " -> complexity = " & length lempel_ziv_complexity;
+        log "substrings are: " & ifelse(lempel_ziv_complexity, length lempel_ziv_complexity != 0, "None");
         i++;
     }
 }

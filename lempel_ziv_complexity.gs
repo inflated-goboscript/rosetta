@@ -19,8 +19,11 @@ proc cache_lempel_ziv_complexity seq {
         local k = 1;
         # Check whether `seq[i:i+k]` occurs anywhere in the previous prefix `seq[:i+k-1]`.
         # If it does, increase k. Stop when it's new (not found in the previous prefix)
-        until not(i + k <= n and slice($seq, i, i+k) in slice($seq, 1, i+k-1)) {
+        # due to a goboscript bug involving functions in until loops, the calculation will be stored in the variable 'temp1'
+        local temp1 = slice($seq, i, i+k) not in slice($seq, 1, i+k-1);
+        until i + k > n or temp1 {
             k++;
+            temp1 = slice($seq, i, i+k) not in slice($seq, 1, i+k-1);
         }
         # If we haven't reached the end of the sequence, take `seq[i:i+k]`, else take the remaining tail
         if i + k <= n {
