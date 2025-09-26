@@ -1,9 +1,11 @@
+# based on https://rosettacode.org/wiki/Lempel%E2%80%93Ziv_complexity#Python
+
 %include inflator/string
 
 list lempel_ziv_complexity;
 
 # Computes the Lempel-Ziv complexity of a given string sequence.
-# Returns the list of distinct substrings used in the parsing process.
+# List of distinct substrings used in the parsing process accessible as the `lempel_ziv_complexity` list.
 proc cache_lempel_ziv_complexity seq {
     # note: using a proc instead of a func, because goboscript funcs cannot return lists.
 
@@ -15,7 +17,7 @@ proc cache_lempel_ziv_complexity seq {
     }
 
     local i = 1;  # Start index for scanning the sequences
-    until i >= n {
+    until i > n {
         local k = 1;
         # Check whether `seq[i:i+k]` occurs anywhere in the previous prefix `seq[:i+k-1]`.
         # If it does, increase k. Stop when it's new (not found in the previous prefix)
@@ -29,7 +31,7 @@ proc cache_lempel_ziv_complexity seq {
         if i + k <= n {
             phrase = slice($seq, i, i+k);
         } else {
-            phrase = slice($seq, i, n);
+            phrase = slice($seq, i, n+1);
         }
 
         add phrase to lempel_ziv_complexity;
