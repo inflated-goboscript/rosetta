@@ -17,7 +17,7 @@ func diff(one, two) {
     # goboscript does not need to cast strings to integers
     local year2 = julian(y2, m2, d2);
     local year1 = julian(y1, m1, d1);
-    return year2 - year1;
+    return floor(year2 - year1);
 }
 
 onflag {main;}
