@@ -18,7 +18,7 @@ proc do_100_doors {
     }
 }
 
-onflag{main;}
+# onflag{main;}
 proc main {
     do_100_doors;
 
