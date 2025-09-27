@@ -20,7 +20,7 @@ func diff(one, two) {
     return floor(year2 - year1);
 }
 
-onflag {main;}
+# onflag {main;}
 proc main {
     ask "one";
     one = answer();
