@@ -13,7 +13,7 @@ func get_lempel_ziv_complexity(seq) {
     local n = length $seq; # Length of the input sequence
     # Edge case: if the sequence is empty, return the empty list
     if n == 0 {
-        stop_this_script;
+        return 0;
     }
 
     local i = 1;  # Start index for scanning the sequences

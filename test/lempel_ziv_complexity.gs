@@ -32,7 +32,7 @@ func ifelse(tval, cond, fval) {
 }
 
 
-onflag {main;}
+# onflag {main;}
 proc main {
     local i = 1;
     repeat length tests {

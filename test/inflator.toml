@@ -5,3 +5,4 @@ username = "inflated-goboscript"
 
 [dependencies]
 rosetta = ".."
+cmath = "cmath"
