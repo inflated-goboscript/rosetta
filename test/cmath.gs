@@ -2,7 +2,7 @@
 
 costumes "assets/blank.svg";
 
-onflag {main;}
+# onflag {main;}
 proc main {
     Complex z1 = Complex(1.5, 3);
     Complex z2 = Complex(1.5, 1.5);
