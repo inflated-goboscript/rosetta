@@ -11,7 +11,6 @@ proc do_100_doors {
         local i = 0;
         repeat length doors / pass_i {
             i += pass_i;
-            log "toggle " & i;
             doors[i] = not doors[i];
         }
         
